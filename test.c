@@ -46,3 +46,23 @@ int InsertCList(LinkList* L, int i, ElemType e) {
 
 	return true;
 }
+
+//É¾³ý½áµã
+int DelCList(LinkList* L, int i) {
+	int j;
+	LinkList* t1, * t2;
+	j = 1;
+	t1 = L->next;
+	t2 = L;
+	while (j < i && t1 != L) {
+		j++;
+		t1 = t1->next;
+		t2 = t2->next;
+	}
+	if (j > i)
+		return false;
+	t2->next = t1->next;
+	free(1);
+
+	return true;
+}
